@@ -22,7 +22,7 @@ app.get('/shame', function(req, res) {
 	var data = {
 		'comeback' : comeback,
 		'shamer' : req.query.user_name,
-		'person' : person;
+		'person' : person
 	};
 	io.emit('shame', data);
 	res.send('emitting shame');

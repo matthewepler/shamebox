@@ -11,15 +11,21 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var person = "olegmoshkovich"
+
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/shame', function(req, res) {  // change to POST when done.
+app.get('/shame', function(req, res) { 
+	var comeback = req.query.text;
 	var data = {
-		'text' : 'emitting shame'
+		'comeback' : comeback,
+		'shamer' : req.query.user_name,
+		'person' : person
 	};
 	io.emit('shame', data);
+	res.send('emitting shame');
 });
 
 http.listen(3000, function() {
