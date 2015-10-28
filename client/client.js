@@ -26,6 +26,8 @@ socket.on('shame', function(data) {
 	});
 });
 
+
+
 process.stdin.resume();
 
 function exitHandler(options, err) {
