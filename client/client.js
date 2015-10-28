@@ -1,4 +1,4 @@
-var socket = require('socket.io-client')('http://shamebox.herokuapp.com:3000');
+var socket = require('socket.io-client')('http://shamebox.herokuapp.com');
 
 socket.on('connect', function() {
 	console.log('yay, connected!');

@@ -14,7 +14,7 @@ var io = require('socket.io')(http);
 var person = "olegmoshkovich"
 
 app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/index.html');
+	res.send("Shame on you, @" + person);
 });
 
 app.get('/shame', function(req, res) { 
