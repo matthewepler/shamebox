@@ -8,6 +8,9 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			var socket = io();
+			socket.on('shame', function(data) {
+				console.log(data);
+			});
 		</script>
 	</body>
 </html>
