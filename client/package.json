@@ -1,0 +1,9 @@
+{
+  "name": "Shamebox_Client",
+  "version": "0.0.1",
+  "description": "Slack slash API triggers socket emitter running on cloud server and received here to trigger sound on Pi",
+  "author": "Matthew Epler",
+  "dependencies": {
+    "socket.io-client": "^1.3.7"
+  }
+}
