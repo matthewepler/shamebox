@@ -25,7 +25,7 @@ app.get('/shame', function(req, res) {
 		'person' : person
 	};
 	io.emit('shame', data);
-	res.send('emitting shame');
+	res.send('emitting shame to @' + person + ": " + comeback);
 });
 
 var port = process.env.PORT || 3000;
