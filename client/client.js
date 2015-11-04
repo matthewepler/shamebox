@@ -5,11 +5,11 @@ var GPIO = require('onoff').Gpio,
 
 socket.on('connect', function() {
 	console.log('yay, connected!');
-	socket.send('hello');
 	led.writeSync(1);
 });
 
 socket.on('disconnect', function() {
+	console.log('disconnected');
 	led.writeSync(0);
 });
 
@@ -25,7 +25,6 @@ socket.on('shame', function(data) {
 		}
 	});
 });
-
 
 
 process.stdin.resume();
