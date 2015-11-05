@@ -16,14 +16,18 @@ socket.on('disconnect', function() {
 socket.on('shame', function(data) {
 	console.log('data rcvd: ');
 	console.log(data);
-	exec("omxplayer /home/pi/shamebox/client/womp.mp3", function (error, stdout, stderr) {
-		console.log(stdout.toString('utf8'));
-		console.log(stderr.toString('utf8'));
-		if (error) {
-			console.log("ERROR: ");
-			console.log(error);
-		}
-	});
+	if (data.comeback.length > 1) {
+		exec('echo ' + data.comeback ' | festival --tts');
+	} else {
+		exec("omxplayer /home/pi/shamebox/client/womp.mp3", function (error, stdout, stderr) {
+			console.log(stdout.toString('utf8'));
+			console.log(stderr.toString('utf8'));
+				if (error) {
+					console.log("ERROR: ");
+					console.log(error);
+				}
+		});
+	}
 });
 
 
